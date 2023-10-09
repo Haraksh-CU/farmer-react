@@ -972,6 +972,7 @@ body {
         font-size: 1.5rem;
     }
 
+
     .main-6 {
         width: 100%;
     }
@@ -1073,6 +1074,10 @@ body {
     .sub2 {
         margin: 0;
         padding: 0;
+    }
+
+    .icon-container .i {
+        font-size: 5rem;
     }
 
     .btn6 button {

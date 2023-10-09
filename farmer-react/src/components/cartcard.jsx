@@ -48,7 +48,7 @@ const Cardcart = (props) => {
                         <div className="product-description-main">
                             <h1>{props.product.name}</h1>
                             <p className='desc'>{props.product.description}</p>
-                            <p className='price-p' style={{ position: "relative" }}>RS.{props.product.price}/kg <button className='quantity-btn' onClick={decrement}>-</button><span>{props.product.quantity}</span><button className='quantity-btn' onClick={increment}>+</button><p className='mx-5' style={{ textAlign: "center", fontSize: "2rem" }}>Total:{props.product.quantity * props.product.price}</p><button className='btn btn-danger p-3 mx-3' style={{ position: "absolute", right: "20px" }} onClick={handleRemove}>remove</button></p>
+                            <p className='price-p' style={{ position: "relative" }}>RS.{props.product.price}/kg <button className='quantity-btn' onClick={decrement}>-</button><span>{props.product.quantity}</span><button className='quantity-btn' onClick={increment}>+</button><p className='mx-5' style={{ textAlign: "center", fontSize: "2rem" }}>Total:{props.product.quantity * props.product.price}</p><button className='btn btn-danger p-3 mx-3 remove' onClick={handleRemove}>remove</button></p>
                         </div>
                     </div>
                 </div>

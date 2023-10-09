@@ -41,8 +41,8 @@ const Navbar = () => {
                     </div>
                     <div class="nav-icons" id="icon-container">
                         <div id='icon-container-2'>{screenSize.width < 796 ? toggle ? <i class="fa-solid fa-xmark fa-5x" style={{ color: "#237262" }} onClick={() => setToggle(!toggle)}></i> : <i class="fa-solid fa-bars fa-5x" style={{ color: "#237262" }} onClick={() => setToggle(!toggle)}></i> : ""}</div>
-                        <i class="fa-solid fa-magnifying-glass fa-3x" style={{ color: "#237262" }}></i>
-                        <Link to="/cart"><div className="cart"><i class="fa-solid fa-cart-shopping fa-3x" style={{ color: "#237262" }}></i><div className="cart-dot">{cart.length}</div></div></Link>
+                        <i class="fa-solid fa-magnifying-glass fa-3x i" style={{ color: "#237262" }}></i>
+                        <Link to="/cart"><div className="cart"><i class="fa-solid fa-cart-shopping fa-3x i" style={{ color: "#237262" }}></i><div className="cart-dot">{cart.length}</div></div></Link>
                     </div>
                 </div>
             </div>
