@@ -68,7 +68,7 @@
 
 .remove {
     position: absolute;
-    right: 20px;
+    right: -12px;
 }
 
 .card-item {
@@ -97,7 +97,7 @@
 
     .remove {
         position: absolute;
-        right: -1px;
+        right: -12px;
     }
 }
 
