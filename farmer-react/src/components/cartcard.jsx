@@ -6,7 +6,7 @@ const Cardcart = (props) => {
     const [quantity, setQuantity] = useState(props.product.quantity);
     function decrement() {
         console.log("decre");
-        if (quantity !== 0) {
+        if (quantity !== 1) {
             console.log("prev" + quantity)
             setQuantity(quantity - 1);
             console.log("after" + quantity)

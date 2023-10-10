@@ -7,6 +7,8 @@ import Aboutus from "./pages/About-page";
 import Shop from "./pages/Shop-page";
 import Contact from "./pages/Contact-page";
 import Cart from "./pages/Cartpage";
+import Login from "./pages/Login";
+import Sign from "./pages/Signup";
 
 const Layout = () => {
   return (
@@ -24,6 +26,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/sign" element={<Sign />}></Route>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<Aboutus />}></Route>

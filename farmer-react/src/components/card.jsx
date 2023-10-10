@@ -3,11 +3,11 @@ import { useState } from 'react';
 import "./card.css";
 import { cart } from './cart';
 const Card = (props) => {
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(props.product.quantity);
     function decrement() {
         console.log("decre");
-        if (quantity !== 0) {
-            if (quantity === 1) {
+        if (quantity !== 1) {
+            if (quantity === 2) {
                 let f = checkcart(props.product, false);
                 if (f.found === true) {
                     cart.splice(f.idx, 1);
