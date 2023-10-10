@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { cart } from '../components/cart';
 import Cardcart from '../components/cartcard';
+import { AppContext } from '../context/Context';
 import "./shop.css";
 
 const Cart = () => {
     const [cart1, setCart] = useState(cart);
     const [Total, setTotal] = useState(calculate());
+    const { len } = useContext(AppContext);
+    console.log("The value is :->" + len);
     const navigate = useNavigate();
     function nav() {
         navigate("/shop");

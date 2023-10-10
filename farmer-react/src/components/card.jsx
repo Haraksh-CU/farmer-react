@@ -1,9 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
+import { AppContext } from '../context/Context';
 import "./card.css";
 import { cart } from './cart';
 const Card = (props) => {
     const [quantity, setQuantity] = useState(props.product.quantity);
+    const { setLength } = useContext(AppContext);
     function decrement() {
         console.log("decre");
         if (quantity !== 1) {
@@ -40,6 +43,7 @@ const Card = (props) => {
             cart.push(props.product);
             console.log(cart);
         }
+        setLength(cart.length);
     }
     props.product.quantity = quantity;
     return (

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Links from './Links';
-import { cart } from './cart';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../context/Context';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
             window.removeEventListener('resize', updateDimension);
         })
     }, [screenSize])
-
+    const { len } = useContext(AppContext);
     return (
         <>
             <div className="navbar-container">
@@ -42,7 +43,7 @@ const Navbar = () => {
                     <div className="nav-icons" id="icon-container">
                         <div id='icon-container-2'>{screenSize.width < 830 ? toggle ? <i className="fa-solid fa-xmark fa-5x" style={{ color: "#237262" }} onClick={() => setToggle(!toggle)}></i> : <i className="fa-solid fa-bars fa-5x" style={{ color: "#237262" }} onClick={() => setToggle(!toggle)}></i> : ""}</div>
                         <i className="fa-solid fa-magnifying-glass fa-3x i" style={{ color: "#237262" }}></i>
-                        <Link to="/cart"><div classNameName="cart"><i className="fa-solid fa-cart-shopping fa-3x i" style={{ color: "#237262" }}></i><div classNameName="cart-dot">{cart.length}</div></div></Link>
+                        <Link to="/cart"><div className="cart"><i className="fa-solid fa-cart-shopping fa-3x i" style={{ color: "#237262" }}></i><div className="cart-dot">{len}</div></div></Link>
                     </div>
                 </div>
             </div>
