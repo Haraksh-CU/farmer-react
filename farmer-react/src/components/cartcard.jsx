@@ -20,13 +20,12 @@ const Cardcart = (props) => {
         setQuantity(quantity + 1);
     }
     const handleRemove = () => {
-        // Call the removeFromCart function passed from the parent component
         let f = checkcart(props.product, false);
         if (f.found === true) {
             cart.splice(f.idx, 1);
         }
         props.setTotal(props.calculate());
-        props.removeFromCart(props.product.id);
+        props.setCart(cart);
         setLength(cart.length);
 
     };

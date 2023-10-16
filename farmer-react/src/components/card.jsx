@@ -44,6 +44,7 @@ const Card = (props) => {
             console.log(cart);
         }
         setLength(cart.length);
+        alert(props.product.name + " added to cart successfully!!");
     }
     props.product.quantity = quantity;
     return (

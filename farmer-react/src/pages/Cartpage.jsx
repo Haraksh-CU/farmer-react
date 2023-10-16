@@ -1,26 +1,17 @@
 import React, { useState } from 'react';
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { cart } from '../components/cart';
 import Cardcart from '../components/cartcard';
-import { AppContext } from '../context/Context';
 import "./shop.css";
 
 const Cart = () => {
     const [cart1, setCart] = useState(cart);
     const [Total, setTotal] = useState(calculate());
-    const { len } = useContext(AppContext);
-    console.log("The value is :->" + len);
     const navigate = useNavigate();
     function nav() {
         navigate("/shop");
         window.scrollTo(0, 0);
     }
-    const removeFromCart = (productId) => {
-        // Remove the item from the cart based on its unique identifier, e.g., productId
-        const updatedCart = cart.filter((item) => item.id !== productId);
-        setCart(updatedCart);
-    };
     function calculate() {
         let t = 0;
         for (const [index, value] of cart1.entries()) {
@@ -36,7 +27,7 @@ const Cart = () => {
             <h1 className='menu-header-txt'>Cart-Items</h1>
             <div className="card-container">
                 <div className="card-main">
-                    {cart1.length > 0 ? cart1.map((item) => <Cardcart product={item} key={item.id} removeFromCart={removeFromCart} setTotal={setTotal} calculate={calculate} />) : <div style={{ textAlign: "center", fontSize: "4rem", color: "#4a7163" }}>CART IS EMPTY!!</div>}
+                    {cart1.length > 0 ? cart1.map((item) => <Cardcart product={item} key={item.id} setCart={setCart} setTotal={setTotal} calculate={calculate} />) : <div style={{ textAlign: "center", fontSize: "4rem", color: "#4a7163" }}>CART IS EMPTY!!</div>}
                 </div>
                 <div className="total">{cart1.length === 0 ? "" : "Total Bill: RS." + Total}</div>
             </div>

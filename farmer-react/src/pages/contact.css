@@ -67,7 +67,7 @@ form {
 }
 
 .login-txt {
-    color: black;
+    color: white;
 }
 
 .login-name,
@@ -222,6 +222,14 @@ label {
         padding: 15px;
     }
 
+    .form-login {
+        width: 80%;
+    }
+
+    .form-login form {
+        padding: 30px;
+    }
+
     form button {
         width: fit-content;
         padding: 5px;
@@ -262,6 +270,14 @@ label {
     input,
     label {
         font-size: 3rem;
+    }
+
+    .form-login {
+        width: 80%;
+    }
+
+    form {
+        padding: 30px;
     }
 }
 
